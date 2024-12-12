@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import ConsultButton from "@/components/common/ConsultButton";
 import Testimonials from "@/components/home/Testimonials";
 import SuccessStories from "@/components/home/SuccessStories";
+import Image from "next/image";
 
 export default function Home() {
   const courses = [
@@ -19,7 +20,20 @@ export default function Home() {
     <main>
       {/* Hero Section */}
       <div className="relative">
-        <div className="mx-auto max-w-7xl px-6 py-24 sm:py-32 lg:px-8">
+        {/* 背景图片 */}
+        <div className="absolute inset-0">
+          <Image
+            src="/images/hero-bg.jpg"
+            alt="Professional discussion and consultation"
+            fill
+            className="object-cover object-[center_30%] brightness-[0.9] contrast-[1.1]"
+            priority
+          />
+          {/* 渐变叠加层 - 进一步降低不透明度 */}
+          <div className="absolute inset-0 bg-gradient-to-l from-white/75 via-white/70 to-white/65" />
+        </div>
+
+        <div className="relative mx-auto max-w-7xl px-6 py-24 sm:py-32 lg:px-8">
           <div className="text-center">
             <motion.h1 
               initial={{ opacity: 0, y: 20 }}
