@@ -5,7 +5,6 @@ const nextConfig = {
     domains: ['source.unsplash.com'],
     unoptimized: true,
   },
-  basePath: '/shenyu',
 }
 
 module.exports = nextConfig 
